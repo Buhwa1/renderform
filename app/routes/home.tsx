@@ -2,6 +2,8 @@ import { ArrowRight, ArrowUpRight, Clock, Layers } from "lucide-react";
 import Navbar from "../../components/Navbar";
 import type { Route } from "./+types/home";
 import Button from "../../components/ui/Button";
+import Upload from "../../components/Upload";
+import { useNavigate } from "react-router";
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -11,6 +13,16 @@ export function meta({}: Route.MetaArgs) {
 }
 
 export default function Home() {
+  const navigate = useNavigate();
+  const handleUploadComplete = (data: string) => {
+    console.log("Upload complete:", data);
+    const newId = Date.now().toString(); // Generate a unique ID based on the current timestamp
+    navigate(`/visualizer/${newId}`);
+    // handle uploaded data
+    console.log('upload complete', data);
+    return true;
+  };
+
   return( 
   <div className="home">
     <Navbar />
@@ -44,7 +56,7 @@ export default function Home() {
           </div>
           <h3>Upload your design</h3>
           <p>Supports various file formats including jpg, png formats up to 10MB</p>
-          <p>Upload Images</p>
+          <Upload onComplete={handleUploadComplete} />
         </div>
       </div>
     </div>
