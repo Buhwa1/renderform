@@ -1,5 +1,7 @@
+import { ArrowRight, ArrowUpRight, Clock, Layers } from "lucide-react";
 import Navbar from "../../components/Navbar";
 import type { Route } from "./+types/home";
+import Button from "../../components/ui/Button";
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -12,8 +14,83 @@ export default function Home() {
   return( 
   <div className="home">
     <Navbar />
-  <h1 className="text-3xl font-bold">Welcome to React Router!</h1>
-  </div>
+    <section className="hero">
+        <div className="announce">
+          <div className="dot">
+            <div className="pulse">
+
+            </div>
+
+          </div>
+          <p>Introducing Renderform 2.0</p>
+        </div>
+        <h1>Build beautiful spaces at the speed of thought using renderform</h1>
+        <p className="subtitle">
+          Rennderform is an AI-first design environment that helps you visualize,render and ship architectural projects faster than ever.
+        </p>
+        <div className="actions">
+          <a href="#upload" className="cta">Start Building <ArrowRight className="icon" /></a>
+          <Button variant="outline" size="lg" className="demo">
+            Watch Demo
+          </Button>
+        </div>
+
+    <div id="upload" className="upload-shell">
+      <div className="grid-overlay"/>
+      <div className="upload-card">
+        <div className="upload-head">
+          <div className="upload-icon">
+            <Layers className="icon" />
+          </div>
+          <h3>Upload your design</h3>
+          <p>Supports various file formats including jpg, png formats up to 10MB</p>
+          <p>Upload Images</p>
+        </div>
+      </div>
+    </div>
+
+      </section>
+
+      <section className="projects">
+        <div className="section-inner">
+          <div className="section-head">
+          
+            <div className="copy">
+              <h2>Projects</h2>
+              <p>Your latest work and shared community projects all in one place</p>
+            </div>
+          </div>
+         
+         <div className="projects-grid">
+          <div className="project-card group">
+            <div className="preview">
+              <img src="https://roomify-mlhuk267-dfwu1i.puter.site/projects/1770803585402/rendered.png" alt="Project Preview" />
+              <div className="badge">
+                <span>Community</span>
+              </div>
+            </div>
+            <div className="card-body">
+              <div>
+                <h3>Modern House</h3>
+                <div className="meta">
+                  <Clock size={12} />
+                  <span>{new Date('01.01.2027').toLocaleDateString()}</span>
+                  <span>By John Doe</span>
+                </div>
+              </div>
+              <div className="arrow">
+                 <ArrowUpRight size={16} />
+              </div>
+            </div>
+          </div>
+         </div>
+        </div>
+       
+      </section>
+
+    </div>
+
+
 
   )
   ;

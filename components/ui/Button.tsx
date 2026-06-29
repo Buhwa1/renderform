@@ -1,6 +1,6 @@
 import React from "react";
 
-type ButtonVariant = "primary" | "secondary" | "ghost" | "danger";
+type ButtonVariant = "primary" | "secondary" | "ghost" | "danger" | "outline";
 type ButtonSize = "sm" | "md" | "lg";
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
@@ -52,6 +52,11 @@ const variantStyles: Record<ButtonVariant, React.CSSProperties> = {
     backgroundColor: "#dc2626",
     color: "#ffffff",
     borderColor: "#dc2626",
+  },
+  outline: {
+    backgroundColor: "transparent",
+    color: "#2563eb",
+    borderColor: "#2563eb",
   },
 };
 
