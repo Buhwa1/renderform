@@ -1,0 +1,81 @@
+{
+  "buildManifest": {
+    "routes": {
+      "root": {
+        "id": "root",
+        "file": "root.tsx",
+        "path": ""
+      },
+      "routes/home": {
+        "id": "routes/home",
+        "parentId": "root",
+        "file": "routes/home.tsx",
+        "index": true
+      },
+      "routes/visualizer.$id": {
+        "id": "routes/visualizer.$id",
+        "parentId": "root",
+        "file": "./routes/visualizer.$id.tsx",
+        "path": "visualizer/:id"
+      }
+    }
+  },
+  "reactRouterConfig": {
+    "appDirectory": "/Users/Ezra/Desktop/MobDev/AI/renderform/app",
+    "basename": "/",
+    "buildDirectory": "/Users/Ezra/Desktop/MobDev/AI/renderform/build",
+    "future": {
+      "unstable_optimizeDeps": false
+    },
+    "routes": {
+      "root": {
+        "id": "root",
+        "file": "root.tsx",
+        "path": ""
+      },
+      "routes/home": {
+        "id": "routes/home",
+        "parentId": "root",
+        "file": "routes/home.tsx",
+        "index": true
+      },
+      "routes/visualizer.$id": {
+        "id": "routes/visualizer.$id",
+        "parentId": "root",
+        "file": "./routes/visualizer.$id.tsx",
+        "path": "visualizer/:id"
+      }
+    },
+    "routeDiscovery": {
+      "mode": "initial"
+    },
+    "serverBuildFile": "index.js",
+    "serverModuleFormat": "esm",
+    "ssr": false,
+    "splitRouteModules": true,
+    "subResourceIntegrity": false,
+    "allowedActionOrigins": false,
+    "unstable_routeConfig": [
+      {
+        "id": "root",
+        "path": "",
+        "file": "root.tsx",
+        "children": [
+          {
+            "file": "routes/home.tsx",
+            "index": true
+          },
+          {
+            "file": "./routes/visualizer.$id.tsx",
+            "path": "visualizer/:id"
+          }
+        ]
+      }
+    ]
+  },
+  "viteConfig": {
+    "build": {
+      "assetsDir": "assets"
+    }
+  }
+}
